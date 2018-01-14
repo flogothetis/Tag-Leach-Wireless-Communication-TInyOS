@@ -1,0 +1,79 @@
+*****************************************************
+		README
+*****************************************************
+
+
+@Author: Logothetis Fragkoulis 
+Department: ECE Technical University of Crete
+Electrical and Computer Engineering 
+Undergraduate Student 
+Email: flogothetis95@gmail.com
+
+
+
+
+
+To run this Wireless Network Simulator follow the following steps :
+
+-- cd /usr/.../tinyOS
+-- make all (I have built a MAKEFILE for you,to make it easier)
+
+->You will see something like that
+------------------------------------------------------------------
+flogothetis@flogothetis:~/tinyOS$ make all
+Makefile:18: warning: overriding recipe for target 'all'
+/home/flogothetis/local/src/tinyos-2x/support/make/targets/all.target:6: warning: ignoring old recipe for target 'all'
+gcc TopologyBuilder.c -lm -o fibo
+TopologyBuilder.c:3:2: warning: #import is a deprecated GCC extension [-Wdeprecated]
+ #import <stdio.h>
+  ^
+TopologyBuilder.c:4:2: warning: #import is a deprecated GCC extension [-Wdeprecated]
+ #import <stdlib.h>
+  ^
+TopologyBuilder.c:5:2: warning: #import is a deprecated GCC extension [-Wdeprecated]
+ #import <math.h>
+  ^
+./fibo
+Give me the diameter D 
+  5
+Give me the signal range D 
+  2
+make micaz sim 
+make[1]: Entering directory '/home/flogothetis/tinyOS'
+[INFO] placing object files in simbuild/micaz
+[INFO] writing XML schema to app.xml
+[INFO] compiling SRTreeAppC to object file sim.o
+
+---------------------------------------------------------------------
+Then the simulation will be started :
+
+
+
+
+-------------------------------------------------------------------- 
+0:9:56.035156270 DEBUG (0): Average of the Tree is  ----->> 11.210526
+0:9:56.035156270 DEBUG (0): Variance of the Tree is  ----->>   41.113573
+0:9:56.035156270 DEBUG (0): Count of the Tree is  ----->> 19
+0:9:56.035156270 DEBUG (0): 
+ ##################################### 
+0:9:56.035156270 DEBUG (0): #######   ROUND   60    ############## 
+0:9:56.035156270 DEBUG (0): #####################################
+Node 0 connected with node 1 True True
+Node 0 connected with node 2 True True
+Node 1 connected with node 7 True True
+Node 2 connected with node 3 True True
+Node 4 connected with node 8 True True
+_____________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
