@@ -1,0 +1,56 @@
+sudo apt-get install build-essential openjdk-8-jdk openjdk-8-jre python2.7 python2.7-dev automake avarice avr-libc msp430-libc avrdude binutils-avr binutils-msp430 gcc-avr gcc-msp430 gdb-avr gdb-msp430 subversion graphviz python-docutils
+
+wget http://sourceforge.net/projects/nescc/files/latest/download
+tar zxvf download
+cd nesc-1.3.4/
+mkdir -p $HOME/local/compilers
+./configure --prefix=$HOME/local/compilers
+make
+make install
+export PATH=$HOME/local/compilers/bin:$PATH
+
+mkdir -p $HOME/local/src
+cd $HOME/local/src
+sudo apt-get install git
+git clone git://github.com/tinyos/tinyos-main.git tinyos-2x
+cd tinyos-2x/tools
+./Bootstrap 
+./configure --prefix=$HOME/local/tosTools
+make all
+make install
+
+cd
+
+// To vi einai editor - xrhsimopoieiste opoion 8elete
+vi .bashrc
+
+// Sto telos toy .bashrc arxeiou pros8esa tis grammes
+export PATH=$HOME/local/tosTools/bin:$PATH
+export PATH=$HOME/local/compilers/bin:$PATH
+export TINYOS_ROOT_DIR=$HOME/local/src/tinyos-2x
+export CLASSPATH=$TINYOS_ROOT_DIR/support/sdk/java/tinyos.jar:.
+export PYTHONPATH=.:$TINYOS_ROOT_DIR/support/sdk/python:$PYTHONPATH
+export PATH=$TINYOS_ROOT_DIR/support/sdk/c:$PATH
+
+
+// Afoy swsete to .bashrc arxeio...
+source .bashrc
+
+// Katebaste to boh8htiko kwdika toy TinyOS apo to courses.
+// Emena eixa pro8ema COMP kai apo8hkeythke sto Downloads
+cd Downloads/
+tar zxvf CO*
+mv tinyOS /home/tinyos/local/src/tinyos-2x/apps/
+cd /home/tinyos/local/src/tinyos-2x/apps/tinyOS/
+sudo apt-get install gcc-4.8 g++-4.8
+vi /home/tinyos/local/src/tinyos-2x/support/make/extras/sim.extra
+
+// Sthn koryfh tou arxeiou, opou gcc balte gcc-4.8
+// Sthn koryfh tou arxeiou, opou g++ balte g++-4.8
+
+// Afou swsete to arxeio...
+
+make micaz sim
+python mySimulation.py 
+
+
