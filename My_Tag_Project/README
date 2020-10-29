@@ -13,7 +13,7 @@ Email: flogothetis95@gmail.com
 
 
 
-To run this Wireless Network Simulator follow the following steps :
+To run this Wireless Network Simulator follow the  steps :
 
 -- cd /usr/.../tinyOS
 -- make all (I have built a MAKEFILE for you,to make it easier)
